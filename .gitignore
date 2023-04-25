@@ -20,3 +20,6 @@ yarn-error.log
 /.dotnet
 /.vscode-server
 .gitconfig
+.ssh
+.config
+.npm
