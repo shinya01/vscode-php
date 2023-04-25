@@ -12,7 +12,7 @@ RUN set -x \
  && apt update \
  && apt upgrade -y \
  && apt install -y --no-install-recommends git zip unzip libicu-dev libonig-dev libzip-dev locales libpq-dev \
- && apt clean \
+ # && apt clean \
  && rm -rf /var/cache/apt \
  && locale-gen en_US.UTF-8 \
  && localedef -f UTF-8 -i en_US en_US.UTF-8 \
@@ -21,8 +21,10 @@ RUN set -x \
  && docker-php-ext-enable xdebug \
  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
  && apt install -y nodejs \
+ && apt install -y git curl libmcrypt-dev default-mysql-client \
  && usermod -s /bin/bash www-data \
  && chown -R www-data:www-data /var/www
+RUN docker-php-ext-install pdo_mysql
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 COPY ./20-xdebug.ini /usr/local/etc/php/conf.d/20-xdebug.ini
