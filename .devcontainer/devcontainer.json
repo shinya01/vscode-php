@@ -3,5 +3,12 @@
     "dockerComposeFile": ["./docker-compose.yml"],
     "service": "app",
     "workspaceFolder": "/var/www/html",
-    "remoteUser": "www-data"
+	"remoteUser": "www-data",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"DEVSENSE.phptools-vscode"
+			]
+		}
+	}
 }
