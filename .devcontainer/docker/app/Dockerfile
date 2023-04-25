@@ -23,6 +23,7 @@ RUN set -x \
  && apt install -y nodejs \
  && apt install -y git curl libmcrypt-dev default-mysql-client \
  && usermod -s /bin/bash www-data \
+ && usermod -d /var/www/html www-data \
  && chown -R www-data:www-data /var/www
 RUN docker-php-ext-install pdo_mysql
 
