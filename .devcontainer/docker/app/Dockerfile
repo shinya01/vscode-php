@@ -21,7 +21,7 @@ RUN set -x \
  && docker-php-ext-enable xdebug \
  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
  && apt install -y nodejs \
- && apt install -y git curl libmcrypt-dev default-mysql-client \
+ && apt install -y git curl libmcrypt-dev default-mysql-client openssh-client \
  && usermod -s /bin/bash www-data \
  && usermod -d /var/www/html www-data \
  && chown -R www-data:www-data /var/www
